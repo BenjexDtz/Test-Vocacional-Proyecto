@@ -1,0 +1,73 @@
+/* styles.css - Versión optimizada */
+:root {
+    --color-primary: #007bff;
+    --color-warning: #ffc107;
+    --color-dark: #343a40;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* Header */
+header {
+    background-color: var(--color-primary);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.header-img {
+    max-height: 80px;
+    width: auto;
+}
+
+/* Navbar */
+.navbar {
+    min-height: 80px;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.nav-link {
+    color: #212529 !important; /* Solo este !important necesario por Bootstrap */
+}
+
+/* Contenido principal */
+#bienvenida {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.btn-success {
+    transition: all 0.3s;
+}
+.btn-success:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Formulario */
+#formulario-container {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    text-align: center;
+}

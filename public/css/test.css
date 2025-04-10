@@ -1,0 +1,50 @@
+/* Estilos específicos para el test */
+#test-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pregunta {
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.pregunta:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+/* Animación al enviar */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#resultado {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* En tu test.css */
+.alert {
+    transition: all 0.3s ease-out;
+}
+
+.alert.fade {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+/* En test.css */
+#test-container {
+    transition: all 0.5s ease-out;
+}
+
+.spinner-border {
+    width: 3rem; 
+    height: 3rem;
+}
