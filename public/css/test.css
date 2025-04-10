@@ -1,50 +1,204 @@
-/* Estilos específicos para el test */
+/* Estilos base para el contenedor del test */
 #test-container {
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.pregunta {
+/* Encabezado del test (personalizado para tu HTML) */
+.text-center.mb-4 h1 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.text-center.mb-4 .lead {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+}
+
+/* Campos de formulario (sobrescribiendo Bootstrap) */
+.form-control {
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
     transition: all 0.3s ease;
-    background-color: #f8f9fa;
 }
 
-.pregunta:hover {
-    background-color: #e9ecef;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
 }
 
+.form-label {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para categorías (se aplicarán dinámicamente) */
+.categoria {
+    margin-bottom: 2.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.categoria-titulo {
+    background-color: #3498db;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.categoria-titulo .badge {
+    margin-right: 10px;
+    font-size: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos para preguntas (se aplicarán dinámicamente) */
+.pregunta-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.pregunta-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    border-color: #3498db;
+}
+
+.pregunta-texto {
+    font-weight: 500;
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Select personalizado */
 .form-select {
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
-/* Animación al enviar */
+.form-select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+/* Botón de enviar (mejorado) */
+#btn-enviar {
+    background-color: #2ecc71;
+    border: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+#btn-enviar:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+}
+
+#btn-enviar:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Estilos para el resultado */
+#resultado {
+    margin-top: 2rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.result-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.result-header {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Spinner de carga */
+.loading-preguntas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: #3498db;
+}
+
+.loading-preguntas span {
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+/* Animaciones */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-#resultado {
-    animation: fadeIn 0.5s ease-out;
+/* Validación de formulario */
+.is-invalid {
+    border-color: #e74c3c !important;
 }
 
-/* En tu test.css */
-.alert {
-    transition: all 0.3s ease-out;
+.invalid-feedback {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
 }
 
-.alert.fade {
-    opacity: 0;
-    transform: translateY(-10px);
+/* Responsive */
+@media (max-width: 768px) {
+    #test-container {
+        padding: 1.5rem;
+    }
+    
+    .pregunta-card {
+        padding: 1rem;
+    }
+    
+    .text-center.mb-4 h1 {
+        font-size: 2rem;
+    }
 }
 
-/* En test.css */
-#test-container {
-    transition: all 0.5s ease-out;
+/* Efecto de pulso para elementos importantes */
+.pulse {
+    animation: pulse 1.5s infinite;
 }
 
-.spinner-border {
-    width: 3rem; 
-    height: 3rem;
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
 }
