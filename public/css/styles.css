@@ -1,73 +1,118 @@
-/* styles.css - Versión optimizada */
+/* Variables para colores corporativos */
 :root {
-    --color-primary: #007bff;
-    --color-warning: #ffc107;
-    --color-dark: #343a40;
+    --color-primario: #FFC107; /* Amarillo bootstrap warning */
+    --color-secundario: #198754; /* Verde bootstrap success */
+    --color-fondo: #f8f9fa;
+    --color-texto: #212529;
 }
 
-/* Estilos generales */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    color: #212529;
+/* Reset o ajustes básicos */
+body.bg-light {
+    background-color: var(--color-fondo) !important;
 }
 
 /* Header */
 header {
-    background-color: var(--color-primary);
-    padding: 2rem 1rem;
-    text-align: center;
+    background-color: var(--color-fondo);
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
 }
 
 .header-img {
     max-height: 80px;
-    width: auto;
-}
-
-/* Navbar */
-.navbar {
-    min-height: 80px;
-    padding: 0.5rem 1rem;
-}
-
-.navbar-brand img {
-    width: 80px;
-    height: 80px;
     object-fit: contain;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.nav-link {
-    color: #212529 !important; /* Solo este !important necesario por Bootstrap */
+.header-img:hover {
+    transform: scale(1.1);
 }
 
-/* Contenido principal */
-#bienvenida {
-    background: white;
-    border-radius: 10px;
-    padding: 2rem;
-    margin-top: 2rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* Navbar personalizado */
+nav.navbar {
+    background-color: var(--color-primario);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+nav.navbar .nav-link {
+    color: var(--color-texto);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav.navbar .nav-link:hover,
+nav.navbar .nav-link:focus {
+    color: var(--color-secundario);
+    text-decoration: underline;
+}
+
+nav.navbar .dropdown-menu {
+    border-radius: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+nav.navbar .dropdown-item:hover,
+nav.navbar .dropdown-item:focus {
+    background-color: var(--color-secundario);
+    color: white;
+    text-decoration: none;
+}
+
+/* Botón principal */
 .btn-success {
-    transition: all 0.3s;
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+    font-weight: bold;
+    font-size: 1.25rem;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .btn-success:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #145c32; /* verde oscuro */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(25, 135, 84, 0.6);
 }
-/* Formulario */
-#formulario-container {
-    background: white;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+/* Contenedor principal */
+main {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    background-color: var(--color-fondo);
+    text-align: center;
+}
+
+main h2 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+    font-size: 2.5rem;
+}
+
+main p {
+    color: #6c757d; /* text-muted */
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
 }
 
 /* Footer */
 footer {
-    background-color: var(--color-dark);
-    color: white;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
+    background-color: #343a40;
+    color: #ced4da;
+    padding: 1rem 0;
     text-align: center;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--color-secundario);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Transiciones generales para links */
+a {
+    transition: color 0.3s ease;
 }

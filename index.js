@@ -12,28 +12,29 @@ dotenv.config();
 
 const app = express();
 
-const whitelist = process.env.FRONTEND_URLS 
-    ? process.env.FRONTEND_URLS.split(',') 
-    : (process.env.NODE_ENV === 'production'
-        ? ['https://tudominio.com']
-        : ['http://localhost:3000', 'http://localhost:4200']);
+const whitelist = process.env.FRONTEND_URLS
+  ? process.env.FRONTEND_URLS.split(',')
+  : (process.env.NODE_ENV === 'production'
+      ? ['https://tudominio.com']
+      : ['http://localhost:3000', 'http://localhost:4200', 'http://localhost:3001']); // agregamos localhost:3001
 
 app.use(cors({
-    origin: function (origin, callback) {
-        // Permitir solicitudes sin origen (como apps móviles o curl)
-        if (!origin) return callback(null, true);
-        
-        if (whitelist.some(domain => origin.startsWith(domain))) {
-            callback(null, true);
-        } else {
-            console.warn(`Intento de acceso no autorizado desde: ${origin}`);
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
+  origin: function (origin, callback) {
+    // Permitir solicitudes sin origen (Postman, curl, etc)
+    if (!origin) return callback(null, true);
+
+    if (whitelist.some(domain => origin.startsWith(domain))) {
+      callback(null, true);
+    } else {
+      console.warn(`Intento de acceso no autorizado desde: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
+
 
 app.use(express.json());
 
