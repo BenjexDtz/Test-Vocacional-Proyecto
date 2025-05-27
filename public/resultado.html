@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Vocacional - Resultados</title>
+  
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/resultse.css" rel="stylesheet">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body class="results-page">
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">VOCATION+</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero" class="active">INICIO</a></li>
+          <li><a href="index.html#about">SOBRE</a></li>
+          <li><a href="index.html#team">EQUIPO</a></li>
+          <li><a href="index.html#contact">CONTACTOS</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#about">REALIZAR TEST</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Sección de Resultados -->
+    <section class="results-section section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h1>Resultados de tu Test Vocacional</h1>
+          <p>Basado en tus respuestas, estas son las carreras que mejor se adaptan a tu perfil.</p>
+        </div>
+
+        <div class="results-grid">
+          <!-- Gráfico Radar -->
+          <div class="chart-container" data-aos="fade-up" data-aos-delay="100">
+            <canvas id="careerChart"></canvas>
+          </div>
+
+          <!-- Carreras Recomendadas -->
+          <div class="careers-list" id="careersResults" data-aos="fade-up" data-aos-delay="200">
+            <!-- Elemento de carrera modificado -->
+            <div class="career-option">
+              <h3>1. Ingeniería de Software</h3>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 92%">92%</div>
+              </div>
+              <div class="best-option">Mejor opción</div>
+            </div>
+            <!-- Fin de elemento modificado -->
+          </div>
+        </div>
+
+        <!-- Explicación -->
+        <div class="results-explanation" data-aos="fade-up" data-aos-delay="300">
+          <h2>¿Cómo interpretar tus resultados?</h2>
+          <p>El gráfico muestra tus habilidades predominantes. Las carreras recomendadas se han seleccionado en base a la compatibilidad con tu perfil. Revisa cada opción para encontrar tu mejor camino profesional.</p>
+        </div>
+
+        <!-- Acciones -->
+        <div class="action-buttons" data-aos="fade-up" data-aos-delay="400">
+          <button id="saveResults" class="btn-action btn-save">
+            <i class="bi bi-download"></i> Guardar PDF
+          </button>
+          <button id="retakeTest" class="btn-action btn-retake">
+            <i class="bi bi-arrow-repeat"></i> Repetir Test
+          </button>
+          <button id="compareResults" class="btn-action btn-compare">
+            <i class="bi bi-people-fill"></i> Comparar
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">VOCATION+</span>
+          </a>
+          <p>Desarrollado con pasión para ayudarte a descubrir tu camino.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="index.html#hero">Inicio</a></li>
+            <li><a href="index.html#about">Sobre</a></li>
+            <li><a href="index.html#team">Equipo</a></li>
+            <li><a href="index.html#contact">Contáctanos</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Nos encuentras en:</h4>
+          <p>Av. Chacaltaya Nro.1258, Zona Achachicala.</p>
+          <p>LA PAZ</p>
+          <p>BOLIVIA</p>
+          <p class="mt-4"><strong>Celular:</strong> <span>+591 68708283</span></p>
+          <p><strong>Correo:</strong> <span>vocationplus@gmail.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">VOCATION+</strong> <span>Todos los derechos reservados</span></p>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Data -->
+  <script src="js/data/carreras.js"></script>
+  
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/results.js"></script>
+
+  <!-- Inicialización AOS -->
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out'
+    });
+  </script>
+</body>
+</html>

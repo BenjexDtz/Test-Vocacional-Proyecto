@@ -1,0 +1,196 @@
+/* Sección de Resultados */
+.results-section {
+  padding: 60px 0;
+  background: linear-gradient(to bottom, var(--logo-light) 0%, white 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h1 {
+  font-size: 2.5rem;
+  color: var(--logo-primary);
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--logo-dark);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Grid de Resultados */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 992px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gráfico */
+.chart-container {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(90, 155, 198, 0.2);
+  height: 400px;
+}
+
+/* Lista de Carreras */
+.careers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.career-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 5px solid var(--logo-secondary);
+  position: relative;
+}
+
+.career-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.career-card:nth-child(1)::after {
+  content: "RECOMENDACIÓN PRINCIPAL";
+  position: absolute;
+  top: 10px;
+  right: -30px;
+  background-color: var(--logo-accent);
+  color: white;
+  padding: 3px 30px;
+  transform: rotate(45deg);
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.career-image {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.career-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.career-info {
+  padding: 25px;
+  flex-grow: 1;
+}
+
+.career-info h3 {
+  color: var(--logo-primary);
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.compatibility {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.percentage {
+  font-weight: bold;
+  color: var(--logo-accent);
+  font-size: 1.1rem;
+  min-width: 40px;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(to right, var(--logo-secondary), var(--logo-accent));
+}
+
+.description {
+  color: var(--logo-dark);
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+/* Habilidades */
+.habilidades {
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+.habilidades strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--logo-primary);
+}
+
+.habilidad {
+  background-color: var(--logo-light);
+  color: var(--logo-primary);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin: 3px;
+  white-space: nowrap;
+}
+
+.btn-details {
+  color: var(--logo-accent);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s;
+  margin-top: 10px;
+}
+
+.btn-details:hover {
+  color: var(--logo-primary);
+}
+
+/* Explicación */
+.results-explanation {
+  background-color: rgba(90, 155, 198, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  border-left: 5px solid var(--logo-accent);
+}
+
+.results-explanation h2 {
+  color: var(--logo-primary);
+  margin-bottom: 15px;
+}
+
+.results-explanation p {
+  color: var(--logo-dark);
+}
